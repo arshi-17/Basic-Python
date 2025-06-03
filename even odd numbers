@@ -1,0 +1,8 @@
+n=1
+print("even" if n%2==0 else "odd")
+#7 factorial
+n=5
+fact=1
+for i in range(2,n+1):
+    fact*=i
+print(fact)
