@@ -1,0 +1,262 @@
+#Functions programs in python
+#1
+
+def sree(a,b):#with argument without return type
+    print(a+b)
+sree(15,20)
+sree(5,20)
+
+
+
+#2
+
+def sree(a,b):#with argument without return type
+    return a+b
+print(sree(15,20))
+print(sree(5,20))
+
+
+#3
+
+a=lambda x,y:x+y
+print(a(1,9))
+
+
+#4 generator func
+
+def fun(n):
+    i=0
+    while i<n:
+        yield i
+        i+=1
+print(list(fun(5)))
+
+
+#5 Decorator func:that modify (or) extend behavior of other function.
+
+def my_dec(func):
+    def wrapper():
+        print("a")
+        func()
+        print("ab")
+    return wrapper
+@my_dec
+def say_hello():
+    print("Hi")
+say_hello() 
+
+
+#6
+
+def my_dec(a):
+    def b():
+        a()
+        print("ab")
+        print("abd")
+    return b
+@my_dec
+def say_hello():
+    print("Hi")
+say_hello() 
+
+
+#7 closure: that captures and remember the values in the enclosing scope even if they are not present in memory.
+
+def outer_function(x):
+    def inner_function(y):
+        return x+y
+    return inner_function
+closure=outer_function(10)
+print(closure(5))
+
+
+#Built-in functions: python standard library
+#8
+
+a="7skjdbf"
+print(a[0].isalpha())
+
+
+#9
+
+a="79984375"
+print(a.count("9"))
+
+
+#10
+
+a="HGFHGJ"
+print(a.lower())
+
+
+#11
+
+a="HGFHGJ"
+print(a.replace("H","k"))
+
+
+#12
+
+a="HGFHGJ"
+for i, e in enumerate(a):
+    print(i,e)
+
+
+#Recursive functions: Functions that call themselves, either directly or indirectly.
+#13
+
+def a():
+    print("sd")
+    a()
+a()
+
+
+#14
+
+def a(n):
+    if n==1:
+        return
+    print(n)
+    a(n-1)
+a(5)
+
+
+#15
+
+def a(n):
+    print(n)
+    if n==1:
+        return
+    a(n-1)
+a(5)
+
+
+#16
+
+def a(n):
+    if n==1:
+        return
+    a(n-1)
+    print(n)
+a(5)
+
+
+#17
+
+def a(n):
+    if n==1:
+        return
+    print(n)
+    a(n-1)
+    print(n)
+a(5)
+
+
+#18
+
+def a(n):
+    if n==1:
+        return
+    a(n-1)
+    print(n)
+    a(n-1)
+a(3)
+
+
+#19
+
+def sree(a,b):#parameters
+    print(a,b)
+sree(10,20)#arguments
+
+
+#20
+
+def sree(a,b=0):
+    print(a,b)
+sree(10)
+
+
+#21
+
+def sree(a,b=0):
+    print(a,b)
+sree(10,8)
+
+
+#22
+
+def sree(b=3):
+    print(b)
+sree()
+
+
+#23
+
+def sree(a,b=3,c=0,d=0,e=0):
+    print(a,b,c)
+sree(2,4)
+
+
+#24
+
+def sree(*a):
+    print(a)
+sree(2,6.7,"hi")
+def sree(*a):
+    a=list(a)
+    print(a)
+sree(2,6.7,"hi")
+
+
+#25 Arbitrary keyword:
+
+def sree(**a):
+    print(a)
+sree(rank=1,age=20,roll=21,name="lakshmi")
+
+
+#26
+
+def sum(n):
+    if n==1:
+        return 1
+    return n+sum(n-1)
+print(sum(5))
+
+
+#27 fibonnaci
+
+def sum(n):
+    if n==1:
+        return 1
+    return n*sum(n-1)
+print(sum(5))
+
+
+#28 sum of given integer
+
+def sum(n):
+    if n<10:
+        return n
+    return n%10+sum(n//10)
+print(sum(123))
+
+
+#29 finding min in given list
+
+def sum(n,i=0):
+    if i==len(n)-1:
+        return n[i]
+    return min(n[i],sum(n,i+1))    
+l=[2,3,6,1,5]
+print(sum(l))
+#method-2                                                                                      
+def sum(n,i=0):
+    if i==len(n)-1:
+        return n[i]
+    min=sum(n,i+1)
+    return n[i] if n[i]<min else min  
+l=[2,3,6,5]
+print(sum(l))
+
