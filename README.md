@@ -1,3 +1,4 @@
 # Basic-Python
-CRT Class Problems
-print("hi")
+n=int(input("Enter n value:"))
+for i in range(1,n,2):
+    print(i,end=" ")
